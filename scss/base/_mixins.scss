@@ -1,0 +1,86 @@
+$breakpoints: (
+	xs: 512px,
+	sm: 768px,
+	md: 896px,
+	lg: 1152px,
+	xl: 1280px,
+	xxl: 1360px,
+	xxxl: 1441px
+
+
+);
+
+@mixin breakpoint( $breakpoint ) {
+    @if map-has-key( $breakpoints, $breakpoint ) {
+        @media ( min-width: #{ map-get( $breakpoints, $breakpoint ) } ) {
+            @content;
+        }
+    } @else if type_of( $breakpoint ) == number and unit( $breakpoint ) == px or unit( $breakpoint ) == em or unit( $breakpoint ) == rem {
+        @media (min-width: $breakpoint ) {
+            @content;
+        }
+    } @else {
+        @warn "No value could be retrieved from `#{$breakpoint}`. "
+               + "It is either not defined in the `$breakpoints` map, or it is an invalid number of px, em, or rem.";
+    }
+}
+
+@mixin max-breakpoint( $breakpoint ) {
+    @if map-has-key( $breakpoints, $breakpoint ) {
+        @media ( max-width: #{ map-get( $breakpoints, $breakpoint ) } ) {
+            @content;
+        }
+    } @else if type_of( $breakpoint ) == number and unit( $breakpoint ) == px or unit( $breakpoint ) == em or unit( $breakpoint ) == rem {
+        @media (max-width: $breakpoint ) {
+            @content;
+        }
+    } @else {
+        @warn "No value could be retrieved from `#{$breakpoint}`. "
+               + "It is either not defined in the `$breakpoints` map, or it is an invalid number of px, em, or rem.";
+    }
+}
+
+
+@mixin font{
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+
+
+@mixin paragraph{
+    @include font;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 140%;
+    color:$grey500;
+}
+
+
+@mixin link{
+    @include font;
+    @include bold;
+    color: $blue500;
+}
+
+
+@mixin overline{
+    @include font;
+    font-weight: 600;
+}
+
+@mixin  medium{
+    font-weight: 500;   
+}
+@mixin bold {
+    font-weight: 600;
+}
+
+@mixin border-bottom{
+  border-bottom: 1px solid $grey200;
+}
+
+
+@mixin shadow-6{
+  box-shadow: 0px 3px 6px rgba(242, 21, 102, 0.08),
+  0px 12px 24px rgba(242, 21, 102, 0.25);
+}

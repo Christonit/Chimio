@@ -1,0 +1,83 @@
+.icon
+  {
+    font-family: "chimio-icon";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+   
+    display: inline-block;
+    text-decoration: inherit;
+    margin-right: .2em;
+    text-align: center;
+    font-size: 1rem;
+    box-sizing: content-box;
+    width: auto;
+    /* opacity: .8; */
+   
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+   
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+   
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+   
+    /* You can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+   
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+   
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+  }
+
+.icon-sad:before { content: '\0e80'; } /* '຀' */
+.icon-favorite:before { content: '\e800'; } /* '' */
+.icon-dislike:before { content: '\e801'; } /* '' */
+.icon-filters:before { content: '\e802'; } /* '' */
+.icon-comments:before { content: '\e803'; } /* '' */
+.icon-love:before { content: '\e804'; } /* '' */
+.icon-female:before { content: '\e805'; } /* '' */
+.icon-shame:before { content: '\e807'; } /* '' */
+.icon-curious:before { content: '\e808'; } /* '' */
+.icon-surprised:before { content: '\e809'; } /* '' */
+.icon-likes:before { content: '\e80a'; } /* '' */
+.icon-poker:before { content: '\e80b'; } /* '' */
+.icon-anger:before { content: '\e80c'; } /* '' */
+.icon-horny:before { content: '\e80f'; } /* '' */
+.icon-happy:before { content: '\e811'; } /* '' */
+.icon-notification:before { content: '\e812'; } /* '' */
+.icon-profile:before { content: '\e815'; } /* '' */
+.icon-male:before { content: '\e817'; } /* '' */
+
+
+.icon-male, .icon-female{
+    display: inline-block;
+    margin: 0 0 0 auto;
+}
+
+
+
+.icon{
+
+    &-male{
+      font-size: 1.4rem;
+      width: 20px;
+      text-align: center;
+      color: $male;
+    }
+
+    &-female{
+      font-size: 1.2rem;
+      width: 20px;
+      text-align: center;
+      color: $female;
+    }
+
+
+}

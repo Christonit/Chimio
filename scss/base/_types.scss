@@ -1,0 +1,15 @@
+
+
+p{
+    @include paragraph;
+}
+
+h4{
+  color: $grey800;
+}
+
+.overline{
+  @include font;
+  @include medium;
+  color: $grey300;
+}

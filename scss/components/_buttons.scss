@@ -1,0 +1,91 @@
+a{
+  &:hover{
+    text-decoration: none;
+    color: #0b2e13;
+  }
+}
+.badge{
+    font-weight: unset;
+}
+
+.read-more{
+  color: $pink500;
+  font-weight: 600;
+  &:hover{
+
+  }
+}
+
+
+.fab{
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  border-radius: 41px;
+  width: 56px;
+  height: 56px;
+  background: $pink500;
+  border: none;
+  @include shadow-6;
+  &:hover{
+    background: $pink600;
+  }
+
+  i{
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+
+
+
+
+a[data-action]{
+  font-size: 1rem;
+  box-sizing: content-box;
+  vertical-align: bottom;
+  padding: 8px;
+  margin: 0 4px;
+  @include font;
+  color: $grey300;
+  border-radius: 24px;
+
+
+
+  &:first-child{
+    margin: 0;
+  }
+
+  &:last-child{
+    margin: 0;
+  }
+
+  &:hover{
+    background: red;
+  }
+
+}
+
+
+.btn-group-toggle{
+  border-radius: 24px;
+background: $grey100;
+
+  .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
+    color: #fff;
+    background-color:$blue500;
+    border-radius: 24px;
+    border-color: unset;
+  }
+
+
+  .btn-secondary {
+    color: $grey500;
+    background-color: $grey100;
+    border-color: unset;
+    border: none;
+    border-radius: 24px;
+
+  }
+
+}

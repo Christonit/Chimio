@@ -1,0 +1,64 @@
+.navbar-brand{
+  color: $white!important;
+}
+header.navbar{
+    background: $gradientBlue;
+    flex-wrap: nowrap;
+    @include breakpoint(sm){
+        
+    }
+    i{
+      font-size: 1.25rem;
+      color: $white;
+      vertical-align: middle;
+    }
+
+    h4{
+      color: $white;
+      width: 100%;
+      font-size: 1.25rem;
+      margin:0 24px 0;
+
+    }
+
+    a{
+      padding: 4px;
+    }
+
+
+
+
+  }
+  .nav-tabs {
+    border: none;
+    flex-wrap: nowrap;
+    background: $gradientBlue;
+    @include font;
+    @include bold;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+
+    .nav-link{
+        background: none;
+        border: none;
+
+        &.active{
+            background: none;
+            border: none;
+            color: $white;
+
+        }
+    }
+
+
+    a{
+      width: 100%;
+      text-align: center;
+      font-weight: 700;
+      padding: .69rem 1rem;
+      color: $white-shade;
+
+    }
+}
+
+

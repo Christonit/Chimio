@@ -1,0 +1,22 @@
+.secret-answer {
+  & > .col-auto {
+    padding: 0;
+
+  }
+
+  .form-row{
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .search-bar{
+    border-radius: 24px;
+    border: 1px solid $grey200;
+    color: $grey300;
+    margin-right:24px;
+  }
+
+}
+
+
+
