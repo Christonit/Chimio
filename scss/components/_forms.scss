@@ -17,3 +17,13 @@
   }
 
 }
+
+label{
+  @include font;
+  @include bold;
+}
+
+.input-label{
+  color: $grey500;
+  font-size: 0.875rem;
+}

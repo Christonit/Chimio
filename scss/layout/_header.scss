@@ -1,23 +1,40 @@
-.navbar-brand{
-  color: $white!important;
+.navbar{
+  &-brand{
+    color: $white!important;
+  }
+
+  &-modal{
+
+    a,i{
+      color: $grey800;
+    }
+  }
+}
+.bg-light{
+  background: $gradientBlue;
+  i{
+    color: $white;
+  }
+  h4{
+    color: $white;
+  }
+
 }
 header.navbar{
-    background: $gradientBlue;
     flex-wrap: nowrap;
     @include breakpoint(sm){
         
     }
     i{
       font-size: 1.25rem;
-      color: $white;
       vertical-align: middle;
     }
 
     h4{
-      color: $white;
       width: 100%;
       font-size: 1.25rem;
       margin:0 24px 0;
+      @include bold;
 
     }
 

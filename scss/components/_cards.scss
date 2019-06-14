@@ -1,3 +1,7 @@
+.post{
+  border-radius: 1rem 1rem 0 0;
+  overflow: hidden;
+}
 .card{
   padding: 1rem;
   border-radius: 0;
@@ -50,6 +54,9 @@
 
 .secret-container{
   padding: 0;
+  background: $gradientBlue;
+
+
 }
 .secret-header {
 
@@ -73,10 +80,26 @@
 
 .secret-timestamp{
   font-size: 0.75rem;
-  line-height: 1.4
+  padding-top: 3px;
+  box-sizing: content-box;
+  // line-height: 1.1
 }
 
+.comments{
 
+  .secret-timestamp{
+    float: right !important;
+    margin: 0 0 0 auto;  
+    .material-icons{
+      font-size: 0.75rem
+    }
+  }
+    
+  .icon-male, .icon-female {
+    margin: unset;
+  }
+
+}
 .secret-footer{
   display: flex;
   justify-content: space-between;

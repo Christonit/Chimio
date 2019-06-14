@@ -44,7 +44,7 @@ a[data-action]{
   font-size: 1rem;
   box-sizing: content-box;
   vertical-align: bottom;
-  padding: 8px;
+  padding: 4px 8px;
   margin: 0 4px;
   @include font;
   color: $grey300;
@@ -61,20 +61,35 @@ a[data-action]{
   }
 
   &:hover{
-    background: red;
+    background: $grey100;
   }
+
 
 }
 
-
+.toggle{
+  background: $grey100;
+}
 .btn-group-toggle{
+
   border-radius: 24px;
-background: $grey100;
+
+
+
+
+  .btn{
+    line-height: 1.4;
+    @include bold;
+    height: 38px;
+    min-width: 88px;
+    line-height: 1.55;
+
+  }
 
   .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
     color: #fff;
     background-color:$blue500;
-    border-radius: 24px;
+    border-radius: 24px!important;
     border-color: unset;
   }
 
@@ -86,6 +101,77 @@ background: $grey100;
     border: none;
     border-radius: 24px;
 
+  }
+
+  &:hover {
+    // background: $grey200;
+
+    .btn-secondary{
+      border-radius: 24px!important;
+      background: $grey200;
+    }
+  }
+
+}
+
+
+
+
+.btn{
+
+  &-link{
+    @include bold;
+    text-transform: none;
+  }
+
+  &-cta{
+    color: $pink500;
+    &:hover{
+      background: $pink100;
+      text-decoration: none;
+      color: $pink500;
+
+    }
+  }
+
+  &-light{
+    font-weight: 600;
+    color: $grey300;
+    background: $grey100;
+
+    &:hover{
+      color: $grey500;
+      background: $grey200
+    }
+  }
+
+  &-emotion{
+    padding: 0.5rem;
+    min-width: 72px;
+    border-radius: 0.5rem;
+    color: $grey300;
+    text-align: center;
+    cursor: pointer;
+    &:hover{
+      color: $blue500;
+    }
+
+    label{
+      margin: 0;
+      display: block;
+    }
+  }
+
+
+  &-active{
+    background: $blue100;
+    color: $blue500;
+  }
+
+  &-outline-secondary{
+    border-color: $grey300;
+    color: $grey500;
+    @include border-radius;
   }
 
 }

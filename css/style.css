@@ -26,6 +26,14 @@ h4 {
   color: #B2B6C2;
 }
 
+.rounded-pill {
+  border-radius: 1rem;
+}
+
+.multiple-radio {
+  background: none !important;
+}
+
 a:hover {
   text-decoration: none;
   color: #0b2e13;
@@ -62,7 +70,7 @@ a[data-action] {
   font-size: 1rem;
   box-sizing: content-box;
   vertical-align: bottom;
-  padding: 8px;
+  padding: 4px 8px;
   margin: 0 4px;
   font-family: "IBM Plex Sans", sans-serif;
   color: #B2B6C2;
@@ -75,17 +83,24 @@ a[data-action]:last-child {
   margin: 0;
 }
 a[data-action]:hover {
-  background: red;
+  background: #EBECEF;
 }
 
 .btn-group-toggle {
   border-radius: 24px;
   background: #EBECEF;
 }
+.btn-group-toggle .btn {
+  line-height: 1.4;
+  font-weight: 600;
+  height: 38px;
+  min-width: 88px;
+  line-height: 1.55;
+}
 .btn-group-toggle .btn-secondary:not(:disabled):not(.disabled).active, .btn-group-toggle .btn-secondary:not(:disabled):not(.disabled):active, .btn-group-toggle .show > .btn-secondary.dropdown-toggle {
   color: #fff;
   background-color: #4828E8;
-  border-radius: 24px;
+  border-radius: 24px !important;
   border-color: unset;
 }
 .btn-group-toggle .btn-secondary {
@@ -94,6 +109,56 @@ a[data-action]:hover {
   border-color: unset;
   border: none;
   border-radius: 24px;
+}
+.btn-group-toggle:hover .btn-secondary {
+  border-radius: 24px !important;
+  background: #CED1D9;
+}
+
+.btn-link {
+  font-weight: 600;
+  text-transform: none;
+}
+.btn-cta {
+  color: #F21566;
+}
+.btn-cta:hover {
+  background: #FDD8E6;
+  text-decoration: none;
+  color: #F21566;
+}
+.btn-light {
+  font-weight: 600;
+  color: #B2B6C2;
+  background: #EBECEF;
+}
+.btn-light:hover {
+  color: #767E93;
+  background: #CED1D9;
+}
+.btn-emotion {
+  padding: 0.5rem;
+  min-width: 72px;
+  border-radius: 0.5rem;
+  color: #B2B6C2;
+  text-align: center;
+  cursor: pointer;
+}
+.btn-emotion:hover {
+  color: #4828E8;
+}
+.btn-emotion label {
+  margin: 0;
+  display: block;
+}
+.btn-active {
+  background: #DFE6FC;
+  color: #4828E8;
+}
+
+.post {
+  border-radius: 1rem 1rem 0 0;
+  overflow: hidden;
 }
 
 .card {
@@ -143,6 +208,7 @@ a[data-action]:hover {
 
 .secret-container {
   padding: 0;
+  background: linear-gradient(90deg, #4828E8 0%, #557BED 100%);
 }
 
 .secret-header {
@@ -163,7 +229,19 @@ a[data-action]:hover {
 
 .secret-timestamp {
   font-size: 0.75rem;
-  line-height: 1.4;
+  padding-top: 3px;
+  box-sizing: content-box;
+}
+
+.comments .secret-timestamp {
+  float: right !important;
+  margin: 0 0 0 auto;
+}
+.comments .secret-timestamp .material-icons {
+  font-size: 0.75rem;
+}
+.comments .icon-male, .comments .icon-female {
+  margin: unset;
 }
 
 .secret-footer {
@@ -198,6 +276,16 @@ a[data-action]:hover {
   border: 1px solid #CED1D9;
   color: #B2B6C2;
   margin-right: 24px;
+}
+
+label {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+}
+
+.input-label {
+  color: #767E93;
+  font-size: 0.875rem;
 }
 
 .icon {
@@ -325,6 +413,12 @@ a[data-action]:hover {
   margin: 0 0 0 auto;
 }
 
+.icon-emotion {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background: aqua;
+}
 .icon-male {
   font-size: 1.4rem;
   width: 20px;
@@ -341,21 +435,32 @@ a[data-action]:hover {
 .navbar-brand {
   color: #ffffff !important;
 }
+.navbar-modal a, .navbar-modal i {
+  color: #343742;
+}
+
+.bg-light {
+  background: linear-gradient(90deg, #4828E8 0%, #557BED 100%);
+}
+.bg-light i {
+  color: #ffffff;
+}
+.bg-light h4 {
+  color: #ffffff;
+}
 
 header.navbar {
-  background: linear-gradient(90deg, #4828E8 0%, #557BED 100%);
   flex-wrap: nowrap;
 }
 header.navbar i {
   font-size: 1.25rem;
-  color: #ffffff;
   vertical-align: middle;
 }
 header.navbar h4 {
-  color: #ffffff;
   width: 100%;
   font-size: 1.25rem;
   margin: 0 24px 0;
+  font-weight: 600;
 }
 header.navbar a {
   padding: 4px;
