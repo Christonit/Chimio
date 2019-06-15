@@ -118,6 +118,9 @@ a[data-action]{
 
 
 .btn{
+  line-height: 1.7;
+  vertical-align: baseline;
+  font-size: 1.7;
 
   &-link{
     @include bold;
@@ -172,6 +175,31 @@ a[data-action]{
     border-color: $grey300;
     color: $grey500;
     @include border-radius;
+    &:hover{
+      background: $grey100;
+      border: 1px solid $grey100;
+      color: $grey500;
+    }
+
+    &:not(:disabled):not(.disabled).active{
+      background-color: $blue500;
+      border: none;
+
+    }
+    
+    &:not(:disabled):not(.disabled):active:focus{
+      box-shadow: none;
+      border: none;
+    }
+
+    &.dropdown-toggle:focus{
+      box-shadow: none;
+      border: none;
+    }
+    &:focus{
+      border: none;
+      box-shadow: unset;
+    }
   }
 
 }
