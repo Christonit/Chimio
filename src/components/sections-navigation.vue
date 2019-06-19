@@ -1,0 +1,18 @@
+<template>
+  <nav class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+
+    <a class="nav-item nav-link active" id="hot-component" data-toggle="tab" href="#hot-secrets" role="tab" aria-controls="hot-secrets" aria-selected="true">Hot</a>
+    <a class="nav-item nav-link" id="favorites-component" data-toggle="tab" href="#favorites" role="tab" aria-controls="favorites" aria-selected="false">Favorites</a>
+    <a class="nav-item nav-link" id="my-secrets-component" data-toggle="tab" href="#my-secrets" role="tab" aria-controls="my-secrets" aria-selected="false">My chimios</a>
+  </nav>
+</template>
+
+<script>
+    export default {
+        name: "sectionsNavigation"
+    }
+</script>
+
+<style scoped>
+
+</style>

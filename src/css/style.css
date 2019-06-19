@@ -1,0 +1,531 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600&display=swap");
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@font-face {
+  font-family: "chimio-icon";
+  src: url("https://chimio.b-cdn.net/chimio-icon.eot?12869697");
+  src: url("https://chimio.b-cdn.net/chimio-icon.eot?12869697#iefix") format("embedded-opentype"), url("https://chimio.b-cdn.net/chimio-icon.woff?12869697") format("woff"), url("https://chimio.b-cdn.net/chimio-icon.ttf?12869697") format("truetype"), url("https://chimio.b-cdn.net/chimio-icon.svg?12869697#chimio-icon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+p {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 140%;
+  color: #767E93;
+}
+
+h4 {
+  color: #343742;
+}
+
+.overline {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  color: #B2B6C2;
+}
+
+.rounded-pill {
+  border-radius: 1rem;
+}
+
+.multiple-radio {
+  background: none !important;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #0b2e13;
+}
+
+.badge {
+  font-weight: unset;
+}
+
+.read-more {
+  color: #F21566;
+  font-weight: 600;
+}
+.fab {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  border-radius: 41px;
+  width: 56px;
+  height: 56px;
+  background: #F21566;
+  border: none;
+  box-shadow: 0px 3px 6px rgba(242, 21, 102, 0.08), 0px 12px 24px rgba(242, 21, 102, 0.25);
+}
+.fab:hover {
+  background: #CB0B62;
+}
+.fab i {
+  vertical-align: middle;
+  text-align: center;
+}
+
+a[data-action] {
+  font-size: 1rem;
+  box-sizing: content-box;
+  vertical-align: bottom;
+  padding: 4px 8px;
+  margin: 0 4px;
+  font-family: "IBM Plex Sans", sans-serif;
+  color: #B2B6C2;
+  border-radius: 24px;
+}
+a[data-action]:first-child {
+  margin: 0;
+}
+a[data-action]:last-child {
+  margin: 0;
+}
+a[data-action]:hover {
+  background: #EBECEF;
+}
+
+.toggle {
+  background: #EBECEF;
+}
+
+.btn-group-toggle {
+  border-radius: 24px;
+}
+.btn-group-toggle .btn {
+  line-height: 1.4;
+  font-weight: 600;
+  height: 38px;
+  min-width: 88px;
+  line-height: 1.55;
+}
+.btn-group-toggle .btn-secondary:not(:disabled):not(.disabled).active, .btn-group-toggle .btn-secondary:not(:disabled):not(.disabled):active, .btn-group-toggle .show > .btn-secondary.dropdown-toggle {
+  color: #fff;
+  background-color: #4828E8;
+  border-radius: 24px !important;
+  border-color: unset;
+}
+.btn-group-toggle .btn-secondary {
+  color: #767E93;
+  background-color: #EBECEF;
+  border-color: unset;
+  border: none;
+  border-radius: 24px;
+}
+.btn-group-toggle:hover .btn-secondary {
+  border-radius: 24px !important;
+  background: #CED1D9;
+}
+
+.btn {
+  line-height: 1.7;
+  vertical-align: baseline;
+  font-size: 1.7;
+}
+.btn-link {
+  font-weight: 600;
+  text-transform: none;
+}
+.btn-cta {
+  color: #F21566;
+}
+.btn-cta:hover {
+  background: #FDD8E6;
+  text-decoration: none;
+  color: #F21566;
+}
+.btn-light {
+  font-weight: 600;
+  color: #B2B6C2;
+  background: #EBECEF;
+}
+.btn-light:hover {
+  color: #767E93;
+  background: #CED1D9;
+}
+.btn-emotion {
+  padding: 0.5rem;
+  min-width: 72px;
+  border-radius: 0.5rem;
+  color: #B2B6C2;
+  text-align: center;
+  cursor: pointer;
+}
+.btn-emotion:hover {
+  color: #4828E8;
+}
+.btn-emotion label {
+  margin: 0;
+  display: block;
+}
+.btn-active {
+  background: #DFE6FC;
+  color: #4828E8;
+}
+.btn-outline-secondary {
+  border-color: #B2B6C2;
+  color: #767E93;
+  border-radius: 1.5rem !important;
+}
+.btn-outline-secondary:hover {
+  background: #EBECEF;
+  border: 1px solid #EBECEF;
+  color: #767E93;
+}
+.btn-outline-secondary:not(:disabled):not(.disabled).active {
+  background-color: #4828E8;
+  border: none;
+}
+.btn-outline-secondary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
+  border: none;
+}
+.btn-outline-secondary.dropdown-toggle:focus {
+  box-shadow: none;
+  border: none;
+}
+.btn-outline-secondary:focus {
+  border: none;
+  box-shadow: unset;
+}
+
+.post {
+  border-radius: 1rem 1rem 0 0;
+  overflow: hidden;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #CED1D9;
+}
+
+.label {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.825rem;
+  color: #767E93;
+}
+
+.nav-carousel {
+  overflow-x: hidden;
+  background: linear-gradient(90deg, #4828E8 0%, #557BED 100%);
+}
+.nav-carousel ul {
+  background: #F4F5F7;
+  border-radius: 16px 16px 0 0;
+  overflow-x: scroll;
+  padding: 12px 0;
+}
+.nav-carousel ul li {
+  border-radius: 0;
+  background: none;
+  border: none;
+}
+.nav-carousel [data-trend] {
+  background: #DFE6FC;
+  border-radius: 24px;
+  margin: 0 4px;
+  font-style: unset;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4828E8;
+  line-height: 0.9;
+}
+.nav-carousel [data-trend]:last-child {
+  border-radius: 24px;
+}
+
+.secret-container {
+  padding: 0;
+  background: linear-gradient(90deg, #4828E8 0%, #557BED 100%);
+}
+
+.secret-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.secret-header .emotion {
+  width: 32px;
+  height: 32px;
+  background: grey;
+}
+.secret-header h4 {
+  font-size: 1rem;
+  margin: 0 12px;
+  font-weight: 700;
+}
+
+.secret-timestamp {
+  font-size: 0.75rem;
+  padding-top: 3px;
+  box-sizing: content-box;
+}
+
+.comments .secret-timestamp {
+  float: right !important;
+  margin: 0 0 0 auto;
+}
+.comments .secret-timestamp .material-icons {
+  font-size: 0.75rem;
+}
+.comments .icon-male, .comments .icon-female {
+  margin: unset;
+}
+
+.secret-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.secret-footer .options i {
+  font-size: 1.25rem;
+}
+.secret-footer .options a:last-child i {
+  font-size: 1.5rem;
+}
+.secret-footer .material-icons {
+  font-size: unset;
+}
+.secret-footer div {
+  display: flex;
+  align-items: baseline;
+  line-height: 1;
+}
+
+.secret-answer > .col-auto {
+  padding: 0;
+}
+.secret-answer .form-row {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.secret-answer .search-bar {
+  border-radius: 24px;
+  border: 1px solid #CED1D9;
+  color: #B2B6C2;
+  margin-right: 24px;
+}
+
+label {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+}
+
+.input-label {
+  color: #767E93;
+  font-size: 0.875rem;
+}
+
+.icon {
+  font-family: "chimio-icon";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  margin-right: 0.2em;
+  text-align: center;
+  font-size: 1rem;
+  box-sizing: content-box;
+  width: auto;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* You can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-sad:before {
+  content: "຀";
+}
+
+/* '຀' */
+.icon-favorite:before {
+  content: "";
+}
+
+/* '' */
+.icon-dislike:before {
+  content: "";
+}
+
+/* '' */
+.icon-filters:before {
+  content: "";
+}
+
+/* '' */
+.icon-comments:before {
+  content: "";
+}
+
+/* '' */
+.icon-love:before {
+  content: "";
+}
+
+/* '' */
+.icon-female:before {
+  content: "";
+}
+
+/* '' */
+.icon-shame:before {
+  content: "";
+}
+
+/* '' */
+.icon-curious:before {
+  content: "";
+}
+
+/* '' */
+.icon-surprised:before {
+  content: "";
+}
+
+/* '' */
+.icon-likes:before {
+  content: "";
+}
+
+/* '' */
+.icon-poker:before {
+  content: "";
+}
+
+/* '' */
+.icon-anger:before {
+  content: "";
+}
+
+/* '' */
+.icon-horny:before {
+  content: "";
+}
+
+/* '' */
+.icon-happy:before {
+  content: "";
+}
+
+/* '' */
+.icon-notification:before {
+  content: "";
+}
+
+/* '' */
+.icon-profile:before {
+  content: "";
+}
+
+/* '' */
+.icon-male:before {
+  content: "";
+}
+
+/* '' */
+.icon-male, .icon-female {
+  display: inline-block;
+  margin: 0 0 0 auto;
+}
+
+.icon-emotion {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  /*Eliminar backround*/
+  background: #EBECEF;
+  border-radius: 24px;
+}
+.icon-male {
+  font-size: 1.4rem;
+  width: 20px;
+  text-align: center;
+  color: #346BFA;
+}
+.icon-female {
+  font-size: 1.2rem;
+  width: 20px;
+  text-align: center;
+  color: #F849EC;
+}
+
+.navbar-brand {
+  color: #ffffff !important;
+}
+.navbar-modal a, .navbar-modal i {
+  color: #343742;
+}
+
+.bg-light {
+  background: linear-gradient(90deg, #4828E8 0%, #557BED 100%);
+}
+.bg-light i {
+  color: #ffffff;
+}
+.bg-light h4 {
+  color: #ffffff;
+}
+
+header.navbar {
+  flex-wrap: nowrap;
+}
+header.navbar i {
+  font-size: 1.25rem;
+  vertical-align: middle;
+}
+header.navbar h4 {
+  width: 100%;
+  font-size: 1.25rem;
+  margin: 0 24px 0;
+  font-weight: 600;
+}
+header.navbar a {
+  padding: 4px;
+}
+
+.nav-tabs {
+  border: none;
+  flex-wrap: nowrap;
+  background: linear-gradient(90deg, #4828E8 0%, #557BED 100%);
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+.nav-tabs .nav-link {
+  background: none;
+  border: none;
+}
+.nav-tabs .nav-link.active {
+  background: none;
+  border: none;
+  color: #ffffff;
+}
+.nav-tabs a {
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  padding: 0.69rem 1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/*# sourceMappingURL=style.css.map */

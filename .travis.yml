@@ -20,6 +20,6 @@ after_success:
 cache:
   directories:
     - node_modules
-    - vendor/bundle
+    - css/bundle
 notifications:
   email: false
