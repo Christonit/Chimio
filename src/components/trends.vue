@@ -3,12 +3,7 @@
 
     <ul class="list-group list-group-horizontal">
       <li  class="list-group-item label badge">Trends</li>
-      <li data-trend='' class="list-group-item badge">Trend 1</li>
-      <li data-trend='' class="list-group-item badge">Trend 2</li>
-      <li data-trend='' class="list-group-item badge">Trend 3</li>
-      <li data-trend='' class="list-group-item badge">Trend 4</li>
-      <li data-trend='' class="list-group-item badge">Trend 5</li>
-      <li data-trend='' class="list-group-item badge">Trend 6</li>
+      <li v-for='(trend,key) in trends' :data-trend='trend' :key='key' class="list-group-item badge">{{trend}}</li>
 
     </ul>
 
@@ -16,9 +11,10 @@
 </template>
 
 <script>
-    export default {
-        name: "trends"
-    }
+  export default {
+    name: "trends",
+    props:["trends"]
+  }
 </script>
 
 <style scoped>
