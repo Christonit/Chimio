@@ -1,6 +1,11 @@
 <template>
 
-  <!--<secret></secret>-->
+  <!--<add-comment :user="user = true"></add-comment>-->
+  <!--<add-form @newSecret="this.secrets.push = $event"></add-form>-->
+  <!--<secret -->
+    <!--:secret-details="selectedSecret(0)">-->
+  <!--</secret>-->
+
   <div>
 
     <header-mobile>
@@ -16,7 +21,7 @@
           :trends="trends">
         </trends>
     <!--<h1> {{shortDetail(1)}} </h1>-->
-        <secret-post v-for="(secret,key) in secrets" :key='key' :gender="secret.gender">
+        <secret-post v-for="(secret,key) in secrets" :key='key' :emotion="secret.emotion" :gender="secret.gender">
 
           <template v-slot:username>{{secret.user}}</template>
           <template v-slot:age>{{secret.age}}</template>
@@ -28,14 +33,9 @@
 
         </secret-post>
 
-
-
       </div>
 
     </div>
-
-
-
 
     <share-secret-fab></share-secret-fab>
   </div>
@@ -55,6 +55,8 @@
   import secretPost from './components/secret-card.vue';
   import shareSecretFab from './components/share-secret-fab.vue';
   import secret from './components/secret/secret.vue';
+  import AddForm from './components/forms/add-secret.vue';
+  import AddComment from './components/forms/add-comment.vue';
 
 
   export default {
@@ -66,9 +68,17 @@
         trends,
         secretPost,
         shareSecretFab,
-        secret
+        secret,
+        AddForm,
+        AddComment,
       },
+    computed:{
+
+    },
     methods:{
+      selectedSecret(key){
+        return this.secrets[key];
+      },
       shortDetail(key){
 
         // if(this.windowSize.length)
@@ -104,10 +114,10 @@
             'meatLover',
              'RFLMAO'],
         secrets:[
-          {id:1,user:'Pedro',age:25,emotion:'',
+          {id:1,user:'Pedro',age:25,emotion:'confused',
             detail:'When I was 17 years old, one night I took my pop’s car for a ride with a girl. I was in the middle of making up with a girl totally naked when a policy patrol surrounded us and through the megaphone demanded that we get off the car. Totally naked, just like we were togheter for a long loooong time.',
             publicationTime:'1h 30m',gender:'male',like:40,dislike:20,comments:4,favorite:false},
-          {id:2,user:'Alejandro',gender:'female',age:25,emotion:'',detail:'xxxxxxxxxxxxx',publicationTime:'1h 30m',like:40,dislike:20,comments:9,favorite:false}]
+          {id:2,user:'Alejandro',gender:'female',age:25,emotion:'curious',detail:'xxxxxxxxxxxxx',publicationTime:'1h 30m',like:40,dislike:20,comments:9,favorite:false}]
 
       }
     }

@@ -2,28 +2,29 @@
   <div class="card">
 
     <div class="secret-header">
-      <i class="icon icon-male float-left"></i>
+      <i :class="'float-left icon icon-'+(gender)" ></i>
 
 
-      <h4 class="secret-author">Alejandra</h4>
+      <h4 class="secret-author"><slot name="user"></slot></h4>
 
       <span class="secret-timestamp overline float-right">
             <i class="material-icons">schedule</i>
-            1h 24m
+        <slot name="date-posted"></slot>
                   </span>
 
 
     </div>
 
     <p class="secret-detail">
-      Sali a bailar con mi mejor amiga y 5 amigas suyas pensando que iba a estar buenisimo. Ni bien llegamos al boliche todas se fueron a la pista a bailar y me tuvieron cuidandoles.
+<slot name="comment">
+</slot>
     </p>
 
 
     <div class="secret-footer">
       <div class="social">
-        <a href="" data-active='false' data-action='like' class="social-link"><i class="icon icon-likes"></i> <span >52</span></a>
-        <a href="" data-active='false' data-action='dislike' class="social-link"><i class="icon icon-dislike"></i><span>20</span></a>
+        <a href="" data-active='false' data-action='like' class="social-link"><i class="icon icon-likes"></i> <span ><slot name="likes"></slot></span></a>
+        <a href="" data-active='false' data-action='dislike' class="social-link"><i class="icon icon-dislike"></i><span><slot name="dislikes"></slot></span></a>
 
       </div>
 
@@ -47,7 +48,8 @@
 
 <script>
     export default {
-        name: "SecretComments"
+        name: "SecretComments",
+      props:['gender']
     }
 </script>
 

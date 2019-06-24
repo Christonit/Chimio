@@ -3,16 +3,14 @@
 
     <div class="secret-header">
 
-      <span class="emotion">
-
-      </span>
+      <span class="emotion" :class="emotion"></span>
 
       <h4 class="secret-author"> <slot name="username"></slot></h4>
 
       <span class="secret-timestamp overline">
         • <slot name="age"></slot> years old • <slot name="publication-date"></slot>
       </span>
-      <i class='icon' :class="'icon-'+(gender)" ></i>
+      <i :class="'icon icon-'+(gender)" ></i>
 
     </div>
 
@@ -52,7 +50,7 @@
 <script>
   export default {
     name: "secretPost",
-    props:['gender']
+    props:['gender','emotion']
   }
 </script>
 

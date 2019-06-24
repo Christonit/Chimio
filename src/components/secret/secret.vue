@@ -26,28 +26,29 @@
 
           <div class="secret-header">
 
-                  <span class="emotion">
+            <span class="emotion" :class="secretDetails.emotion"></span>
 
-                  </span>
-
-            <h4 class="secret-author"> <slot name="username"></slot> </h4>
+            <h4 class="secret-author"> {{secretDetails.user}}</h4>
 
             <span class="secret-timestamp overline">
-                    • <slot name="age"></slot> years old • <slot name="publication-date"></slot>
-                  </span>
+              • {{secretDetails.age}} years old • {{secretDetails.publicationTime}}
+            </span>
+            <i :class="'icon icon-'+(secretDetails.gender)" ></i>
 
-            <i class="icon icon-male "></i>
 
           </div>
 
           <p class="secret-detail">
 
-              <slot name="detail"></slot>
-              <a href="#" class="read-more">Read more</a>
+              {{secretDetails.detail}}
           </p>
 
 
-          <secret-footer></secret-footer>
+          <secret-footer>
+            <template v-slot:like>{{secretDetails.like}}</template>
+            <template v-slot:dislike>{{secretDetails.dislike}}</template>
+            <template v-slot:comments-count>{{secretDetails.comments}}</template>
+          </secret-footer>
 
         </div>
 
@@ -83,7 +84,17 @@
 
 
 
-        <secret-comments></secret-comments>
+        <secret-comments
+          v-for="(comment,key) in comments"
+          :gender="comment.gender">
+
+          <template v-slot:user>{{comment.user}}</template>
+          <template v-slot:date-posted>{{comment.datePosted}}</template>
+          <template v-slot:comment>{{comment.comment}}</template>
+          <template v-slot:likes>{{comment.count.likes}}</template>
+          <template v-slot:dislikes>{{comment.count.dislikes}}</template>
+
+        </secret-comments>
 
       </div>
 
@@ -100,12 +111,29 @@
   import SecretFooter from './secret-footer.vue';
 
   export default {
-        name: "secret",
+    name: "secret",
+    props:['secret-details'],
     components:
       {
         SecretComments,
         SecretFooter
       },
+    data(){
+      return {
+        comments:[
+          {
+            id:1,
+            user:'Alejandra',
+            gender:'female',
+            datePosted:'1h 24m',
+            like:true,
+            dislike:false,
+            count:{likes:50,dislikes:20},
+            comment:'Sali a bailar con mi mejor amiga y 5 amigas suyas pensando que iba a estar buenisimo. Ni bien llegamos al boliche todas se fueron a la pista a bailar y me tuvieron cuidandoles.'
+          }
+          ]
+      }
     }
+  }
 </script>
 
