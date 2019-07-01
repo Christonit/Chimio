@@ -6,7 +6,7 @@
       <header class="navbar navbar-modal py-2 position-fixed navbar-form">
         <!--Mobile header-->
 
-        <a class="" href="#">
+        <a class="" href="#" @click="closeModal">
 
           <i class="material-icons">
             close
@@ -112,6 +112,11 @@
         }
       },
       methods:{
+        closeModal(e){
+          this.$emit('close-form');
+          e.preventDefault();
+          return;
+        },
         newSecret(){
 
 
