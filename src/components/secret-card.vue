@@ -13,10 +13,9 @@
       <i :class="'icon icon-'+(gender)" ></i>
 
     </div>
+    <p class="secret-detail" @click="showDetailed">
 
-    <p class="secret-detail">
       <slot name="detail"></slot>
-
       <a href="#" class="read-more">Read more</a>
     </p>
 
@@ -50,7 +49,14 @@
 <script>
   export default {
     name: "secretPost",
-    props:['gender','emotion']
+    props:['gender','emotion','secretKey'],
+    methods:{
+      showDetailed(){
+
+        this.$emit('detailed-secret',this.secretKey)
+
+      },
+    }
   }
 </script>
 

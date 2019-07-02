@@ -5,7 +5,7 @@
     <header class="navbar navbar-light bg-light">
       <!--Mobile header-->
 
-      <a class="" href="#">
+      <a class="" href="#" @click="closeModal">
 
         <i class="material-icons">
           arrow_back
@@ -110,9 +110,10 @@
   import SecretComments from './comments.vue';
   import SecretFooter from './secret-footer.vue';
 
+
   export default {
     name: "secret",
-    props:['secret-details'],
+    props:['secret-details','comments'],
     components:
       {
         SecretComments,
@@ -120,19 +121,15 @@
       },
     data(){
       return {
-        comments:[
-          {
-            id:1,
-            user:'Alejandra',
-            gender:'female',
-            datePosted:'1h 24m',
-            like:true,
-            dislike:false,
-            count:{likes:50,dislikes:20},
-            comment:'Sali a bailar con mi mejor amiga y 5 amigas suyas pensando que iba a estar buenisimo. Ni bien llegamos al boliche todas se fueron a la pista a bailar y me tuvieron cuidandoles.'
-          }
-          ]
+
       }
+    },
+    methods:{
+      closeModal(e){
+        this.$emit('close-form');
+        e.preventDefault();
+        return;
+      },
     }
   }
 </script>
