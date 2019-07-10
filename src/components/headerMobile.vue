@@ -1,7 +1,7 @@
 <template>
 
   <header>
-    <nav class="navbar navbar-light bg-light nav-center">
+    <nav class="navbar navbar-light bg-dark d-flex nav-center">
       <!--Mobile header-->
       <a class="" href="#"><i class="icon icon-profile"></i></a>
       <h4 class="text-center">Chimio</h4>

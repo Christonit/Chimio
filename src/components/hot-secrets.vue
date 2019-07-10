@@ -1,10 +1,10 @@
 <template>
 
-  <div id="hot-secrets" aria-labelledby="hot-secrets">
+  <section id="hot-secrets" aria-labelledby="hot-secrets">
 
 
 
-    <trends
+    <trends v-if="resolution.windowSize <= resolution.xs"
       :trends="trends">
     </trends>
 
@@ -22,7 +22,7 @@
 
 
 
-  </div>
+  </section>
 
 </template>
 
@@ -31,21 +31,10 @@
   import trends from './trends.vue';
   import SecretPost from './secret-card.vue';
   export default {
-    props:{resolution: Object},
+    props:{resolution: Object, trends:Array},
     data(){
       return {
         showSecret:false,
-        trends:
-          ['foreverFat',
-            'alwaysPositive',
-            'OhBoys',
-            'slaying',
-            'motivation',
-            'totallySad',
-            'foreverAlone',
-            'healthyLife',
-            'meatLover',
-            'RFLMAO'],
         secrets:[
           {id:1,user:'Pedro',age:25,emotion:'confused',
             detail:'When I was 17 years old, one night I took my pop’s car for a ride with a girl. I was in the middle of making up with a girl totally naked when a policy patrol surrounded us and through the megaphone demanded that we get off the car. Totally naked, just like we were togheter for a long loooong time.',

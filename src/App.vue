@@ -1,23 +1,62 @@
 <template>
 
-  <div>
+  <div class="bg-light">
     <secret v-if="secretVisible" class="modal" :secret-details="secret.secret[0]" :comments="secret.comments" @close-form="secretVisible = false"></secret>
 
     <add-form class="modal" v-if="shareSecret" @close-form="shareSecret = false" ></add-form>
 
-    <header-mobile>
+    <header-desktop v-if="!isMobile">
+      <sections-navigation slot="section-nav" ></sections-navigation>
+    </header-desktop>
+
+    <header-mobile v-if="isMobile">
       <sections-navigation slot="section-nav" ></sections-navigation>
     </header-mobile>
 
 
-    <div class="container-fluid secret-container">
+    <div class="secret-container" :class="(isMobile) ? 'container-fluid' : 'container'">
+      <div class="row">
+        <aside v-if="!isMobile" class="col-12 col-md-3 sidebar-hollow">
+          <div class="emotion-list">
+            <h6>Emotions</h6>
 
-      <router-view :resolution="resolution" @show-secret="showSecret"></router-view>
+            <span class="filter">
+            <i class="emotion"></i>
+            <p>Anger</p>
+          </span>
+
+          </div>
+
+          <div class="trends-list">
+            <h6>Emotions</h6>
+
+            <span class="trend">
+            #holaMundo
+          </span>
+          </div>
+        </aside>
+
+        <router-view :resolution="resolution" :trends="trends" @show-secret="showSecret" :class="(isMobile) ? '' : 'col-12 col-md-6'" ></router-view>
+
+        <aside  v-if="!isMobile" class="col-12 col-md-3 sidebar-hollow">
+          <div id="recent-activity" class="emotion-list">
+            <h6>Emotions</h6>
+
+            <span class="filter">
+            <i class="emotion"></i>
+            <p>Anger</p>
+          </span>
+
+          </div>
+
+        </aside>
+      </div>
+
 
     </div>
 
 
-    <share-secret-fab @show-secret=" shareSecret = true"></share-secret-fab>
+    <share-secret-fab @show-secret=" shareSecret = true" v-if="isMobile"></share-secret-fab>
 
 
   </div>
@@ -28,6 +67,7 @@
 <script>
 
   import HeaderMobile from './components/headerMobile.vue';
+  import HeaderDesktop from './components/header.vue';
   import sectionsNavigation from './components/sections-navigation.vue';
   import trends from './components/trends.vue';
   import secretPost from './components/secret-card.vue';
@@ -49,9 +89,14 @@
         secret,
         AddForm,
         AddComment,
+        HeaderDesktop,
 
       },
     computed:{
+
+      isMobile(){
+        return this.resolution.windowSize <= this.resolution.xs
+      }
 
     },
     methods:{
@@ -63,7 +108,18 @@
         resolution:{windowSize: window.innerWidth,xs:512,sm:768,md:896,lg:1152,xl:1280},
         shareSecret:false,
         secret:null,
-        secretVisible:false
+        secretVisible:false,
+        trends:
+          ['foreverFat',
+            'alwaysPositive',
+            'OhBoys',
+            'slaying',
+            'motivation',
+            'totallySad',
+            'foreverAlone',
+            'healthyLife',
+            'meatLover',
+            'RFLMAO'],
 
       }
     }, mounted() {

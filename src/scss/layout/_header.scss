@@ -18,7 +18,7 @@
   }
 
 }
-.bg-light{
+.bg-dark{
   background: $gradientBlue;
   i{
     color: $white;
@@ -27,13 +27,25 @@
     color: $white;
   }
 
+}
 
+
+.bg-light{
+  background: $bg-light;
 
 }
-header.navbar{
+
+.header{
+
+  .branding{
+  }
+}
+header{
     flex-wrap: nowrap;
     @include breakpoint(sm){
-        
+      padding: 0.375rem 1rem;
+     @include shadow-lvl-1;
+      margin-bottom: 2.25rem;
     }
     i{
       font-size: 1.25rem;
@@ -41,7 +53,6 @@ header.navbar{
     }
 
     h4{
-      width: 100%;
       font-size: 1.25rem;
       margin:0 24px 0;
       @include bold;
@@ -60,6 +71,11 @@ header.navbar{
     border: none;
     flex-wrap: nowrap;
     background: $gradientBlue;
+    @include breakpoint(sm){
+      background: none;
+      min-width: 24rem;
+    }
+
     @include font;
     @include bold;
     font-size: 0.875rem;
@@ -68,11 +84,16 @@ header.navbar{
     .nav-link{
         background: none;
         border: none;
-
+      @include breakpoint(sm){
+        padding: .69rem 0.75rem;
+      }
         &.active{
             background: none;
             border: none;
             color: $white;
+          @include breakpoint(sm){
+            color: $blue500;
+          }
 
         }
     }
@@ -84,6 +105,9 @@ header.navbar{
       font-weight: 700;
       padding: .69rem 1rem;
       color: $white-shade;
+      @include breakpoint(sm){
+        color: $grey800;
+      }
 
     }
 }
