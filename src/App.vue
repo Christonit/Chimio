@@ -6,11 +6,11 @@
     <add-form class="modal" v-if="shareSecret" @close-form="shareSecret = false" ></add-form>
 
     <header-desktop v-if="!isMobile">
-      <sections-navigation slot="section-nav" ></sections-navigation>
+      <sections-navigation :is-mobile='isMobile' slot="section-nav" ></sections-navigation>
     </header-desktop>
 
     <header-mobile v-if="isMobile">
-      <sections-navigation slot="section-nav" ></sections-navigation>
+      <sections-navigation :is-mobile='isMobile' slot="section-nav" ></sections-navigation>
     </header-mobile>
 
 

@@ -74,6 +74,8 @@ header{
     @include breakpoint(sm){
       background: none;
       min-width: 24rem;
+      max-width: 32rem;
+      width: 100%;
     }
 
     @include font;
@@ -86,6 +88,12 @@ header{
         border: none;
       @include breakpoint(sm){
         padding: .69rem 0.75rem;
+        &:hover{
+          color: $blue500;
+          i{
+            background-position-y: 20px;
+          }
+        }
       }
         &.active{
             background: none;
@@ -96,6 +104,8 @@ header{
           }
 
         }
+
+
     }
 
 
@@ -106,7 +116,7 @@ header{
       padding: .69rem 1rem;
       color: $white-shade;
       @include breakpoint(sm){
-        color: $grey800;
+        color: $grey500;
       }
 
     }

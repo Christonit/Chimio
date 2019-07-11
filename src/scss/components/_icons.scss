@@ -5,8 +5,46 @@
 
 }
 
+.sys-icon{
+  background-image: url("../img/system-icons.svg");
+
+}
+
+.active i.sys-icon{
+  background-position-y: 20px;
+}
+
+.icon{
+  &-sm{
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    &:hover{
+      background-position-y: 20px;
+    }
+
+  }
+}
+
+.hot-i{
+  background-position-x: 0;
+
+}
+
+.secret-i{
+  background-position-x: 20px;
+
+}
+
+.fav-i{
+  background-position-x: 45px;
+
+}
+
+
 .love{
   background-position: 0 0;
+
 }
 
 .happy{
