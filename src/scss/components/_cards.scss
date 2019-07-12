@@ -7,6 +7,14 @@
   border-radius: 0;
   border: none;
   @include border-bottom;
+
+  @include breakpoint(sm){
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+    @include border-radius-medium;
+    border:none;
+    @include shadow-2;
+  }
 }
 .label{
   @include overline;
@@ -56,6 +64,10 @@
   padding: 0;
   background: $gradientBlue;
 
+  @include breakpoint(sm){
+    background: none;
+
+  }
 
 }
 .secret-header {

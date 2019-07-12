@@ -1,17 +1,20 @@
 .emotion{
-    width: 32px;
-    height: 32px;
-    background-image: url("../img/emotions.svg");
+  width: 32px;
+  height: 32px;
+  background-image: url("../img/emotions.svg");
 
 }
 
 .sys-icon{
   background-image: url("../img/system-icons.svg");
+  background-position-y: -8px;
+
 
 }
 
 .active i.sys-icon{
-  background-position-y: 20px;
+  background-position-y: -36px;
+
 }
 
 .icon{
@@ -19,8 +22,9 @@
     display: inline-block;
     height: 20px;
     width: 20px;
+
     &:hover{
-      background-position-y: 20px;
+      //background-position-y: -36px;
     }
 
   }
@@ -32,14 +36,26 @@
 }
 
 .secret-i{
-  background-position-x: 20px;
+  background-position-x: -24px;
 
 }
 
 .fav-i{
-  background-position-x: 45px;
+  background-position-x: -50px;
 
 }
+
+.notification{
+  background-position-x: -78px;
+  background-position-y: -64px;
+}
+
+
+.night-mode{
+  background-position-x: -102px;
+  background-position-y: -64px;
+}
+
 
 
 .love{
@@ -81,42 +97,42 @@
 
 
 .icon
-  {
-    font-family: "chimio-icon";
-    font-style: normal;
-    font-weight: normal;
-    speak: none;
-   
-    display: inline-block;
-    text-decoration: inherit;
-    margin-right: .2em;
-    text-align: center;
-    font-size: 1rem;
-    box-sizing: content-box;
-    width: auto;
-    /* opacity: .8; */
-   
-    /* For safety - reset parent styles, that can break glyph codes*/
-    font-variant: normal;
-    text-transform: none;
-   
-    /* fix buttons height, for twitter bootstrap */
-    line-height: 1em;
-   
-    /* Animation center compensation - margins should be symmetric */
-    /* remove if not needed */
-    margin-left: .2em;
-   
-    /* You can be more comfortable with increased icons size */
-    /* font-size: 120%; */
-   
-    /* Font smoothing. That was taken from TWBS */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-   
-    /* Uncomment for 3D effect */
-    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
-  }
+{
+  font-family: "chimio-icon";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  margin-right: .2em;
+  text-align: center;
+  font-size: 1rem;
+  box-sizing: content-box;
+  width: auto;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* You can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
 
 .icon-sad:before { content: '\0e80'; } /* '຀' */
 .icon-favorite:before { content: '\e800'; } /* '' */
@@ -139,34 +155,34 @@
 
 
 .icon-male, .icon-female{
-    display: inline-block;
-    margin: 0 0 0 auto;
+  display: inline-block;
+  margin: 0 0 0 auto;
 }
 
 
 
 .icon{
 
-    &-emotion{
-      width: 32px;
-      height: 32px;
-      display: inline-block;
-      /*Eliminar backround*/
-    }
+  &-emotion{
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    /*Eliminar backround*/
+  }
 
-    &-male{
-      font-size: 1.4rem;
-      width: 20px;
-      text-align: center;
-      color: $male;
-    }
+  &-male{
+    font-size: 1.4rem;
+    width: 20px;
+    text-align: center;
+    color: $male;
+  }
 
-    &-female{
-      font-size: 1.2rem;
-      width: 20px;
-      text-align: center;
-      color: $female;
-    }
+  &-female{
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+    color: $female;
+  }
 
 
 }

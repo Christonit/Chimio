@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+  <nav class="nav nav-tabs justify-content-center ml-md-5" id="nav-tab" role="tablist">
     <router-link class="nav-item nav-link d-flex justify-content-center" active-class="active" to="/hot"><i v-if="!isMobile" class="sys-icon icon-sm hot-i mr-2"></i>Hot</router-link>
     <!--<router-link class="nav-item nav-link" :to="{name:'hot', params:{resolution:resolution}}">Hot</router-link>-->
     <router-link class="nav-item nav-link d-flex justify-content-center" active-class="active" to="/favorites" ><i v-if="!isMobile" class="sys-icon icon-sm fav-i mr-2"></i> Favorites</router-link>

@@ -15,7 +15,7 @@
 
 
     <div class="secret-container" :class="(isMobile) ? 'container-fluid' : 'container'">
-      <div class="row">
+      <div :class="(isMobile) ? '' : 'row'">
         <aside v-if="!isMobile" class="col-12 col-md-3 sidebar-hollow">
           <div class="emotion-list">
             <h6>Emotions</h6>
