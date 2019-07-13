@@ -2,7 +2,7 @@
 
   <div>
 
-    <header class="navbar navbar-light bg-light">
+    <header class="navbar bg-mobile text-left d-flex justify-content-start ">
       <!--Mobile header-->
 
       <a class="" href="#" @click="closeModal">

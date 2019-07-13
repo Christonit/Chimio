@@ -3,7 +3,7 @@
 
     <div class="secret-header">
 
-      <span class="emotion" :class="emotion"></span>
+      <span class="emotion standar" :class="emotion"></span>
 
       <h4 class="secret-author"> <slot name="username"></slot></h4>
 
@@ -18,7 +18,7 @@
       <slot name="detail"></slot>
       <a href="#" class="read-more">Read more</a>
     </p>
-
+    <!--<h4 ></h4>-->
     <div class="secret-footer">
       <div class="social">
         <a href="" data-active='false' data-action='like' class="social-link"><i class="icon icon-likes"></i> <span ><slot name="like"></slot></span></a>
@@ -28,6 +28,12 @@
       </div>
 
       <div class="options">
+        <a v-if="!isMobile" href="" data-action='generate-image' >
+          <i class="material-icons">
+            photo
+          </i>
+        </a>
+
         <a href="" data-action='share'>
           <i class="material-icons">
             share
@@ -49,7 +55,7 @@
 <script>
   export default {
     name: "secretPost",
-    props:['gender','emotion','secretKey'],
+    props:['gender','emotion','secretKey','isMobile'],
     methods:{
       showDetailed(){
 

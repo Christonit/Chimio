@@ -30,6 +30,18 @@
 }
 
 
+.bg-mobile{
+  background: $gradientBlue;
+  i{
+    color: $white;
+  }
+  h4{
+    color: $white;
+  }
+
+}
+
+
 .bg-light{
   background: $bg-light;
 
@@ -43,6 +55,7 @@
 header{
     flex-wrap: nowrap;
     @include breakpoint(sm){
+      background: $white;
       padding: 0.5rem 1rem;
      @include shadow-1;
       margin-bottom: 2.25rem;

@@ -4,10 +4,20 @@ p{
     @include paragraph;
 }
 
+b{
+  @include font;
+
+}
+
 h4{
   color: $grey800;
 }
 
+h6{
+  color: $grey500;
+  @include bold;
+  font-size: 0.875rem;
+}
 .overline{
   @include font;
   @include medium;

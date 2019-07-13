@@ -6,3 +6,24 @@
   background: none!important;
 
 }
+
+.desktop{
+  min-height: 100vh;
+ }
+
+
+
+hr{
+  border-color: $grey200;
+  margin: 2rem 0;
+}
+
+
+.no-margin{
+  margin: 0;
+}
+
+.margin-x-negative{
+  margin-right: -1rem;
+  margin-left: -1rem;
+}

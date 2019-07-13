@@ -1,8 +1,17 @@
 .emotion{
+  display: block;
+  background-image: url("../img/emotions.svg");
+  background-size: cover;
+}
+
+.standar{
   width: 32px;
   height: 32px;
-  background-image: url("../img/emotions.svg");
+}
 
+.small{
+  width: 20px;
+  height: 20px;
 }
 
 .sys-icon{

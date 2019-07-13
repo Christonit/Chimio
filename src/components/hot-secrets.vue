@@ -8,7 +8,7 @@
       :trends="trends">
     </trends>
 
-    <secret-post v-for="(secret,key) in secrets" :key='key' :emotion="secret.emotion" :gender="secret.gender" :secret-key="key" @detailed-secret="showFullSecret">
+    <secret-post v-for="(secret,key) in secrets" :key='key' :emotion="secret.emotion" :gender="secret.gender" :secret-key="key" @detailed-secret="showFullSecret" :is-mobile="isMobile">
 
       <template v-slot:username>{{secret.user}}</template>
       <template v-slot:age>{{secret.age}}</template>
@@ -31,7 +31,7 @@
   import trends from './trends.vue';
   import SecretPost from './secret-card.vue';
   export default {
-    props:{resolution: Object, trends:Array},
+    props:{resolution: Object, trends:Array,isMobile:String},
     data(){
       return {
         showSecret:false,
@@ -66,12 +66,18 @@
         let shortenedSecret = this.secrets[x].detail;
 
         // return shortenedSecret;
+        shortenedSecret = shortenedSecret.split(' ');
 
         if (this.resolution.windowSize < this.resolution.xs) {
-          shortenedSecret = shortenedSecret.split(' ');
 
           if ( shortenedSecret.length > 50 ){
             return shortenedSecret.splice(0,50).join(' ') + '...' ;
+          }else {
+            return shortenedSecret.join(' ');
+          }
+        }else{
+          if ( shortenedSecret.length > 55 ){
+            return shortenedSecret.splice(0,55).join(' ') + '...' ;
           }else {
             return shortenedSecret.join(' ');
           }

@@ -1,0 +1,22 @@
+.sidebar{
+
+  .label{
+    //margin-bottom: 1rem;
+  }
+}
+
+.trends-list{
+
+  .trend{
+    display: inline-block;
+    width: 100%;
+    @include bold;
+    color: $blue500;
+    padding: 0.5rem;
+    @include border-radius-small;
+    &:hover{
+        background: $blue100;
+        color: $blue500;
+    }
+  }
+}
