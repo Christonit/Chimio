@@ -61,6 +61,10 @@ $breakpoints: (
     @include bold;
     color: $blue500;
 }
+@mixin hint-link{
+    @include font;
+    color: $grey300;
+}
 
 
 @mixin overline{
@@ -107,4 +111,13 @@ $breakpoints: (
 
 @mixin shadow-1{
   box-shadow: 0px 1px 3px rgba(118, 126, 147, 0.12), 0px 1px 2px rgba(118, 126, 147, 0.1);
+}
+
+
+@mixin cardify{
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  @include border-radius-medium;
+  border:none;
+  @include shadow-2;
 }

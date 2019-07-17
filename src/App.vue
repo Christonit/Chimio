@@ -16,176 +16,13 @@
 
     <div class="secret-container" :class="(isMobile) ? 'container-fluid' : 'container'">
       <div :class="(isMobile) ? '' : 'row justify-content-center'">
-        <aside v-if="!isMobile" class="col-12 col-md-2 sidebar-hollow">
-          <div id="emotion-list" class="sidebar">
 
-            <h6 class="mb-4">Emotions</h6>
-
-            <span class="filter-btn">
-            <i class="emotion small love"></i>
-            <b>Anger</b>
-          </span>
-
-          </div>
-
-
-          <hr class="space">
-
-          <div class="trends-list">
-
-            <div class="mb-3">
-                <h6>Trends</h6>
-            </div>
-
-            <span class="trend">
-            #holaMundo
-          </span>
-          </div>
-        </aside>
+        <emotions-trends v-if="!isMobile"></emotions-trends>
 
         <router-view :resolution="resolution" :trends="trends" @show-secret="showSecret" :is-mobile='isMobile' :class="(isMobile) ? '' : 'col-12 col-md-5'" ></router-view>
 
-        <aside  v-if="!isMobile" class="col-12 col-md-3 sidebar-hollow">
-          <div id="recent-activity" class="card p-0 overflow-hidden">
-            <h6 class="px-4 py-3 m-0">Emotions</h6>
+        <recent-activity  v-if="!isMobile"></recent-activity>
 
-            <hr class="no-margin margin-x-negative">
-
-            <div id="recent-activity" class="activity-list">
-
-              <div class="comment-snippet d-flex flex-wrap">
-
-                <div class="comment-header d-flex justify-content-between w-100 align-items-center">
-
-                  <i class="icon icon-male m-0" ></i>
-
-                  <b class="author ml-3 w-100"> StarPlatinum</b>
-
-                  <a href="" data-action='more' class="py-0">
-                    <i class="material-icons">
-                      more_horiz
-                    </i>
-                  </a>
-
-
-                </div>
-
-                <p class="">
-
-                  xxxxxxxxxxxxxxxxxxxxxxx.
-
-                </p>
-
-              </div>
-
-              <div class="comment-snippet d-flex flex-wrap">
-
-                <div class="comment-header d-flex justify-content-between w-100 align-items-center">
-
-                  <i class="icon icon-male m-0" ></i>
-
-                  <b class="author ml-3 w-100"> StarPlatinum</b>
-
-                  <a href="" data-action='more' class="py-0">
-                    <i class="material-icons">
-                      more_horiz
-                    </i>
-                  </a>
-
-
-                </div>
-
-                <p class="">
-
-                  xxxxxxxxxxxxxxxxxxxxxxx.
-
-                </p>
-
-              </div>
-              <div class="comment-snippet d-flex flex-wrap">
-
-                <div class="comment-header d-flex justify-content-between w-100 align-items-center">
-
-                  <i class="icon icon-male m-0" ></i>
-
-                  <b class="author ml-3 w-100"> StarPlatinum</b>
-
-                  <a href="" data-action='more' class="py-0">
-                    <i class="material-icons">
-                      more_horiz
-                    </i>
-                  </a>
-
-
-                </div>
-
-                <p class="">
-
-                  xxxxxxxxxxxxxxxxxxxxxxx.
-
-                </p>
-
-              </div>
-
-              <div class="comment-snippet d-flex flex-wrap">
-
-                <div class="comment-header d-flex justify-content-between w-100 align-items-center">
-
-                  <i class="icon icon-male m-0" ></i>
-
-                  <b class="author ml-3 w-100"> StarPlatinum</b>
-
-                  <a href="" data-action='more' class="py-0">
-                    <i class="material-icons">
-                      more_horiz
-                    </i>
-                  </a>
-
-
-                </div>
-
-                <p class="">
-
-                  xxxxxxxxxxxxxxxxxxxxxxx.
-
-                </p>
-
-              </div>
-
-              <div class="comment-snippet d-flex flex-wrap">
-
-                <div class="comment-header d-flex justify-content-between w-100 align-items-center">
-
-                  <i class="icon icon-male m-0" ></i>
-
-                  <b class="author ml-3 w-100"> StarPlatinum</b>
-
-                  <a href="" data-action='more' class="py-0">
-                    <i class="material-icons">
-                      more_horiz
-                    </i>
-                  </a>
-
-
-                </div>
-
-                <p class="">
-
-                  xxxxxxxxxxxxxxxxxxxxxxx.
-
-                </p>
-
-              </div>
-
-
-
-            </div>
-
-
-
-          </div>
-
-        </aside>
       </div>
 
 
@@ -207,6 +44,8 @@
   import sectionsNavigation from './components/sections-navigation.vue';
   import trends from './components/trends.vue';
   import secretPost from './components/secret-card.vue';
+  import RecentActivity from './components/recent-activity.vue';
+  import EmotionsTrends from './components/emotions-trends.vue';
   import shareSecretFab from './components/share-secret-fab.vue';
   import Secret from './components/secret/secret.vue';
   import AddForm from './components/forms/add-secret.vue';
@@ -220,6 +59,8 @@
         HeaderMobile,
         sectionsNavigation,
         trends,
+        RecentActivity,
+        EmotionsTrends,
         secretPost,
         shareSecretFab,
         Secret,

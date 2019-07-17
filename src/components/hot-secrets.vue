@@ -1,12 +1,66 @@
 <template>
 
   <section id="hot-secrets" aria-labelledby="hot-secrets">
+    <div v-if="!isMobile"
+         id='share-secret-big-prompt'
+         class="d-flex justify-content-between align-items-center">
 
+      <span>
+        Trust us, we won’t tell anybody...
+      </span>
+
+      <span class="d-flex align-items-center  btn btn-link px-1">
+        <i class="material-icons mr-2">edit</i>
+
+        <!--<i class="sys-icon small icon-male m-0"></i> -->
+        <b class=""> Share a secret</b>
+      </span>
+
+    </div>
+
+    <hr class="my-3">
+
+    <div class="filter-lists d-flex justify-content-between pb-3">
+      <span class="form-group d-inline-block">
+        <label class="mb-1 input-label d-block">Gender</label>
+        <div class="btn-group btn-group-toggle hollow" data-toggle="buttons">
+          <label class="btn btn-toggle active px-2 h-32">
+            <input type="radio" name="filter" value="recent"  checked> Recent
+          </label>
+          <label class="btn btn-toggle px-2 h-32">
+            <input type="radio" name="filter" value="popular" > Popular
+          </label>
+        </div>
+
+      </span>
+
+      <span class="form-group w-25 d-inline-block">
+        <label class="mb-1 input-label">Gender</label>
+        <select class="custom-select" id="inputGroupSelect01">
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </span>
+
+      <span class="form-group d-inline-block w-25">
+        <label class="mb-1 input-label">Location</label>
+        <select class="custom-select" id="inputGroupSelect01">
+          <option selected>Global</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </span>
+
+    </div>
 
 
     <trends v-if="resolution.windowSize <= resolution.xs"
       :trends="trends">
     </trends>
+
+
 
     <secret-post v-for="(secret,key) in secrets" :key='key' :emotion="secret.emotion" :gender="secret.gender" :secret-key="key" @detailed-secret="showFullSecret" :is-mobile="isMobile">
 
@@ -37,6 +91,9 @@
         showSecret:false,
         secrets:[
           {id:1,user:'Pedro',age:25,emotion:'confused',
+            detail:'When I was 17 years old, one night I took my pop’s car for a ride with a girl. I was in the middle of making up with a girl totally naked when a policy patrol surrounded us and through the megaphone demanded that we get off the car. Totally naked, just like we were togheter for a long loooong time.',
+            publicationTime:'1h 30m',gender:'male',like:40,dislike:20,comments:4,favorite:false},
+        {id:3,user:'Pedro',age:25,emotion:'confused',
             detail:'When I was 17 years old, one night I took my pop’s car for a ride with a girl. I was in the middle of making up with a girl totally naked when a policy patrol surrounded us and through the megaphone demanded that we get off the car. Totally naked, just like we were togheter for a long loooong time.',
             publicationTime:'1h 30m',gender:'male',like:40,dislike:20,comments:4,favorite:false},
           {id:2,user:'Alejandro',gender:'female',age:25,emotion:'curious',detail:'xxxxxxxxxxxxx',publicationTime:'1h 30m',like:40,dislike:20,comments:9,favorite:false}],

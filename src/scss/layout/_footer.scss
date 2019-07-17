@@ -1,0 +1,15 @@
+footer{
+  .nav-link{
+    @include hint-link;
+    padding: .25rem 0.75rem;
+
+    font-size: 0.875rem;
+  }
+
+  p{
+    color: $grey300;
+    font-size: 0.875rem;
+
+  }
+
+}
