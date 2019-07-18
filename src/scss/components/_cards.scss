@@ -8,8 +8,8 @@
   border: none;
   @include border-bottom;
 
-  @include breakpoint(sm){
-    padding: 1.25rem;
+  @include breakpoint(md){
+    padding: 1.5rem;
     margin-bottom: 2rem;
     @include border-radius-medium;
     border:none;
@@ -73,6 +73,14 @@
   }
 
 }
+.secret-content{
+  @include breakpoint(sm){
+
+  }
+}
+
+
+
 .secret-header {
 
   display: flex;
@@ -115,30 +123,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  //a{
-  //
-  //  i{
-  //    font-size: 1rem;
-  //  }
-  //
-  //
-  //
-  //
-  //  font-size: 1rem;
-  //  box-sizing: content-box;
-  //  vertical-align: bottom;
-  //  padding: 4px;
-  //  margin: 0 8px;
-  //
-  //  &:first-child{
-  //    margin: 0;
-  //  }
-  //
-  //  &:last-child{
-  //    margin: 0;
-  //  }
-  //}
+  margin: 0 -8px;
+  @include breakpoint(sm){
+    //margin: unset;
+  }
 
   .options {
     i{
@@ -169,8 +157,46 @@
   display: block;
   background: $white;
   overflow: scroll;
+  border: none;
+  @include breakpoint(sm){
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: $black700;
+    &.fade{
+      opacity: 1;
+    }
+
+  }
+
+
 }
 
+
+.modal-content{
+  border: none;
+  @include breakpoint(sm){
+    max-width: 600px;
+    left: 0;
+    right: 0;
+    margin: 5rem auto;
+    @include border-radius-medium;
+    overflow: hidden;
+    z-index: 9999;
+    top: 0;
+    position: absolute;
+  }
+
+
+  .card{
+    border-radius: 0 !important;
+    margin-bottom: 0;
+    box-shadow: unset;
+    @include border-bottom;
+
+  }
+
+
+}
 
 .comment-snippet{
   padding: 1rem;

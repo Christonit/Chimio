@@ -2,13 +2,15 @@
   <div class="card">
 
     <div class="secret-header">
-      <i :class="'float-left icon icon-'+(gender)" ></i>
+      <i :class="'icon-'+(gender)" class="float-left sys-icon small" ></i>
+
+      <!--<i :class="'icon icon-'+(gender)" ></i>-->
 
 
       <h4 class="secret-author"><slot name="user"></slot></h4>
 
-      <span class="secret-timestamp overline float-right">
-            <i class="material-icons">schedule</i>
+      <span class="secret-timestamp overline float-right d-flex align-items-center">
+            <i class="material-icons mr-1">schedule</i>
         <slot name="date-posted"></slot>
                   </span>
 
@@ -23,8 +25,9 @@
 
     <div class="secret-footer">
       <div class="social">
-        <a href="" data-active='false' data-action='like' class="social-link"><i class="icon icon-likes"></i> <span ><slot name="likes"></slot></span></a>
-        <a href="" data-active='false' data-action='dislike' class="social-link"><i class="icon icon-dislike"></i><span><slot name="dislikes"></slot></span></a>
+        <span data-active='false' data-action='like' class="d-flex align-items-center social-link"><i class="sys-icon small icon-likes mr-1"></i> <span ><slot name="likes"></slot></span></span>
+        <span data-active='false' data-action='dislike' class="d-flex align-items-center social-link"><i class="sys-icon small icon-dislike mr-1"></i><span><slot name="dislikes"></slot></span></span>
+
 
       </div>
 

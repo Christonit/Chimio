@@ -88,12 +88,12 @@
   background-position: 50% 0;
 }
 
-.ashamed{
+.shame{
   background-position: 62.5% 0;
 }
 
 .sad{
-  background-position: 62.5% 0;
+  background-position: 75% 0;
 }
 
 .confused{
@@ -101,7 +101,12 @@
 }
 
 .curious{
+  background-position: 100% 0;
+}
+
+.poker-face{
   background-position: 87.5% 0;
+
 }
 
 
@@ -126,7 +131,11 @@
 .icon-surprised { content: '\e809'; } /* '' */
 
 .icon-filters {
-  content: '\e802';
+  background-position-y: -32px;
+  background-position-x: 111px;
+  height: 24px;
+  width: 24px;
+  display: block;
 } /* '' */
 
 .icon-likes {
@@ -155,7 +164,13 @@
 .icon-horny { content: '\e80f'; } /* '' */
 .icon-happy { content: '\e811'; } /* '' */
 .icon-notification { content: '\e812'; } /* '' */
-.icon-profile { content: '\e815'; } /* '' */
+.icon-profile {
+  background-position-y: -32px;
+  background-position-x: 77px;
+  height: 24px;
+  width: 24px;
+  display: block;
+} /* '' */
 .icon-male{
   background-position-x: -345px;
 } /* '' */

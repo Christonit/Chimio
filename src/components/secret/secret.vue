@@ -1,8 +1,9 @@
 <template>
 
-  <div>
+  <div @click="closeModalFromContainer">
 
-    <header class="navbar bg-mobile text-left d-flex justify-content-start ">
+    <div class="overlay" v-if="!isMobile"></div>
+    <header class="navbar bg-mobile text-left d-flex justify-content-start d-md-none">
       <!--Mobile header-->
 
       <a class="" href="#" @click="closeModal">
@@ -17,90 +18,98 @@
 
     </header>
 
-    <div class="container-fluid secret-container">
-      <!--<div class="tab-content" id="nav-tabContent">-->
-      <div class="post">
+    <div class="modal-content">
 
 
-        <div class="card">
+      <div class="container-fluid secret-container">
+        <!--<div class="tab-content" id="nav-tabContent">-->
+        <div class="post">
 
-          <div class="secret-header">
 
-            <span class="emotion" :class="secretDetails.emotion"></span>
+          <div class="card">
 
-            <h4 class="secret-author"> {{secretDetails.user}}</h4>
+            <div class="secret-header">
 
-            <span class="secret-timestamp overline">
+              <!--<span class="emotion standar" :class="emotion"></span>-->
+              <span class="emotion standar" :class="secretDetails.emotion"></span>
+
+              <h4 class="secret-author"> {{secretDetails.user}}</h4>
+
+              <span class="secret-timestamp overline">
               • {{secretDetails.age}} years old • {{secretDetails.publicationTime}}
             </span>
-            <i :class="'icon icon-'+(secretDetails.gender)" ></i>
+              <i :class="'sys-icon small icon-'+(secretDetails.gender)" class="ml-auto" ></i>
+
+              <!--<i :class="`sys-icon small${(secretDetails.gender)}`" class="ml-auto"></i>-->
 
 
-          </div>
+            </div>
 
-          <p class="secret-detail">
+            <p class="secret-detail">
 
               {{secretDetails.detail}}
-          </p>
+            </p>
 
 
-          <secret-footer>
-            <template v-slot:like>{{secretDetails.like}}</template>
-            <template v-slot:dislike>{{secretDetails.dislike}}</template>
-            <template v-slot:comments-count>{{secretDetails.comments}}</template>
-          </secret-footer>
+            <secret-footer>
+              <template v-slot:like>{{secretDetails.like}}</template>
+              <template v-slot:dislike>{{secretDetails.dislike}}</template>
+              <template v-slot:comments-count>{{secretDetails.comments}}</template>
+            </secret-footer>
+
+          </div>
 
         </div>
 
-      </div>
-
-      <div class="secret-answer card">
-        <form>
-          <div class="form-row align-items-center">
-            <div >
-              <input type="text" class="form-control search-bar" placeholder="Leave a comment...">
-            </div>
-
-            <div class="col-auto">
-
-              <div class="btn-group btn-group-toggle toggle" data-toggle="buttons">
-                <label class="btn btn-secondary active">
-                  <input type="radio" name="filter" value="recent"  checked> Recent
-                </label>
-                <label class="btn btn-secondary">
-                  <input type="radio" name="filter" value="popular" > Popular
-                </label>
-
+        <div class="secret-answer card">
+          <form>
+            <div class="form-row align-items-center">
+              <div >
+                <input type="text" class="form-control search-bar" placeholder="Leave a comment...">
               </div>
 
+              <div class="col-auto">
+
+                <div class="btn-group btn-group-toggle toggle" data-toggle="buttons">
+                  <label class="btn btn-secondary active">
+                    <input type="radio" name="filter" value="recent"  checked> Recent
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="filter" value="popular" > Popular
+                  </label>
+
+                </div>
+
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
+
+
+        <div class="comments">
+
+
+
+
+          <secret-comments
+            v-for="(comment,key) in comments"
+            :gender="comment.gender">
+
+            <template v-slot:user>{{comment.user}}</template>
+            <template v-slot:date-posted>{{comment.publicationTime}}</template>
+            <template v-slot:comment>{{comment.comment}}</template>
+            <template v-slot:likes>{{comment.count.likes}}</template>
+            <template v-slot:dislikes>{{comment.count.dislikes}}</template>
+
+          </secret-comments>
+
+        </div>
+
+
+
       </div>
-
-
-      <div class="comments">
-
-
-
-
-        <secret-comments
-          v-for="(comment,key) in comments"
-          :gender="comment.gender">
-
-          <template v-slot:user>{{comment.user}}</template>
-          <template v-slot:date-posted>{{comment.datePosted}}</template>
-          <template v-slot:comment>{{comment.comment}}</template>
-          <template v-slot:likes>{{comment.count.likes}}</template>
-          <template v-slot:dislikes>{{comment.count.dislikes}}</template>
-
-        </secret-comments>
-
-      </div>
-
-
-
     </div>
+
   </div>
     
 </template>
@@ -113,7 +122,7 @@
 
   export default {
     name: "secret",
-    props:['secret-details','comments'],
+    props:['secret-details','comments','isMobile'],
     components:
       {
         SecretComments,
@@ -130,6 +139,17 @@
         e.preventDefault();
         return;
       },
+      closeModalFromContainer(e){
+
+        if(!this.isMobile){
+          this.$emit('close-form');
+        }
+
+        e.preventDefault();
+        return;
+
+
+      }
     }
   }
 </script>

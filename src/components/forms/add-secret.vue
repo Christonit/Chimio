@@ -78,8 +78,8 @@
             <div class="input-group mb-3 d-flex justify-content-center">
               <label class="mb-3 input-label">How do you feel?</label>
               <div class="form-check-inline flex-wrap justify-content-center mx-0">
-                  <span class='btn-emotion mb-2 mx-2' v-for="emotion in emotions">
-                      <i class="icon-emotion emotion" :class="emotion"></i>
+                  <span class='btn-emotion mb-2 mx-2' v-for="(emotion,key) in emotions">
+                      <i class="icon-emotion emotion" :class="emotionToClass[key]"></i>
                       <label >{{emotion}}</label>
                       <input type="radio" name='emotion' value='sad' class='d-none emotion'  aria-label="Radio button for following text input">
                   </span>
@@ -108,10 +108,19 @@
       name: "add-form",
       data(){
         return{
-          emotions:['love','happy','surprised','angry','shame','sad','lust','curious','confused']
+          emotions:['Anger','Love','Surprised','Happy','Shame','Lust','Sad','Curious','Poker face'],
         }
       },
-      methods:{
+      computed: {
+        emotionToClass() {
+          let x = this.emotions.map(emotion => {
+            return emotion.toLowerCase().replace(' ', '-')
+          })
+          return x;
+        },
+      },
+
+          methods:{
         closeModal(e){
           this.$emit('close-form');
           e.preventDefault();

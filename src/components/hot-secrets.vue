@@ -1,57 +1,60 @@
 <template>
 
   <section id="hot-secrets" aria-labelledby="hot-secrets">
-    <div v-if="!isMobile"
-         id='share-secret-big-prompt'
-         class="d-flex justify-content-between align-items-center">
+    <div v-if="!isMobile">
 
-      <span>
-        Trust us, we won’t tell anybody...
-      </span>
+      <div id='share-secret-big-prompt'
+           class="d-flex justify-content-between align-items-center">
 
-      <span class="d-flex align-items-center  btn btn-link px-1">
-        <i class="material-icons mr-2">edit</i>
+        <span>
+          Trust us, we won’t tell anybody...
+        </span>
 
-        <!--<i class="sys-icon small icon-male m-0"></i> -->
-        <b class=""> Share a secret</b>
-      </span>
+        <span class="d-flex align-items-center  btn btn-link px-1">
+          <i class="material-icons mr-2">edit</i>
 
-    </div>
+          <!--<i class="sys-icon small icon-male m-0"></i> -->
+          <b class=""> Share a secret</b>
+        </span>
 
-    <hr class="my-3">
+      </div>
 
-    <div class="filter-lists d-flex justify-content-between pb-3">
-      <span class="form-group d-inline-block">
-        <label class="mb-1 input-label d-block">Gender</label>
-        <div class="btn-group btn-group-toggle hollow" data-toggle="buttons">
-          <label class="btn btn-toggle active px-2 h-32">
-            <input type="radio" name="filter" value="recent"  checked> Recent
-          </label>
-          <label class="btn btn-toggle px-2 h-32">
-            <input type="radio" name="filter" value="popular" > Popular
-          </label>
-        </div>
+      <hr class="my-3">
 
-      </span>
+      <div class="filter-lists d-flex justify-content-between pb-3">
+        <span class="form-group d-inline-block">
+          <label class="mb-1 input-label d-block">Gender</label>
+          <div class="btn-group btn-group-toggle hollow" data-toggle="buttons">
+            <label class="btn btn-toggle active px-2 h-32">
+              <input type="radio" name="filter" value="recent"  checked> Recent
+            </label>
+            <label class="btn btn-toggle px-2 h-32">
+              <input type="radio" name="filter" value="popular" > Popular
+            </label>
+          </div>
 
-      <span class="form-group w-25 d-inline-block">
-        <label class="mb-1 input-label">Gender</label>
-        <select class="custom-select" id="inputGroupSelect01">
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </span>
+        </span>
 
-      <span class="form-group d-inline-block w-25">
-        <label class="mb-1 input-label">Location</label>
-        <select class="custom-select" id="inputGroupSelect01">
-          <option selected>Global</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-      </span>
+        <span class="form-group w-25 d-inline-block">
+          <label class="mb-1 input-label">Gender</label>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </span>
+
+        <span class="form-group d-inline-block w-25">
+          <label class="mb-1 input-label">Location</label>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Global</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </span>
+
+      </div>
 
     </div>
 
@@ -85,7 +88,7 @@
   import trends from './trends.vue';
   import SecretPost from './secret-card.vue';
   export default {
-    props:{resolution: Object, trends:Array,isMobile:String},
+    props:{resolution: Object, trends:Array,isMobile:Boolean},
     data(){
       return {
         showSecret:false,

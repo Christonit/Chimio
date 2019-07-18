@@ -1,7 +1,21 @@
 <template>
 
   <div :class="(!isMobile)?'desktop bg-light':''">
-    <secret v-if="secretVisible" class="modal" :secret-details="secret.secret[0]" :comments="secret.comments" @close-form="secretVisible = false"></secret>
+
+    <secret v-if="secretVisible"
+            class="modal"
+            :class="!isMobile ? 'fade':''"
+            :secret-details="secret.secret[0]"
+            :comments="secret.comments"
+            :is-mobile="isMobile"
+            @close-form="secretVisible = false"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+
+
+    </secret>
 
     <add-form class="modal" v-if="shareSecret" @close-form="shareSecret = false" ></add-form>
 
@@ -105,12 +119,16 @@
     },
     methods:{
       showSecret(x){
-        this.secretVisible = true
+        this.secretVisible = true ;
         this.secret = x;
 
-
-
+      },
+      hideSecret(){
+        if (!this.isMobile) {
+          this.secretVisible = false;
+        }
       }
+
     },
 
   }
