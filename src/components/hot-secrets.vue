@@ -94,10 +94,10 @@
         showSecret:false,
         secrets:[
           {id:1,user:'Pedro',age:25,emotion:'confused',
-            detail:'When I was 17 years old, one night I took my pop’s car for a ride with a girl. I was in the middle of making up with a girl totally naked when a policy patrol surrounded us and through the megaphone demanded that we get off the car. Totally naked, just like we were togheter for a long loooong time.',
+            detail:'When I was 17 years old, one night I took my pop’s car for a ride with a girl. I was parking near the entrance of Agora Mall when a policy patrol surrounded us and through the megaphone demanded that we get off the car. Totally embarased, just like we were togheter for a long loooong time.',
             publicationTime:'1h 30m',gender:'male',like:40,dislike:20,comments:4,favorite:false},
         {id:3,user:'Pedro',age:25,emotion:'confused',
-            detail:'When I was 17 years old, one night I took my pop’s car for a ride with a girl. I was in the middle of making up with a girl totally naked when a policy patrol surrounded us and through the megaphone demanded that we get off the car. Totally naked, just like we were togheter for a long loooong time.',
+            detail:'When I was 17 years old, one night I took my pop’s car for a ride with a girl. I was parking near the entrance of Agora Mall when a policy patrol surrounded us and through the megaphone demanded that we get off the car. Totally embarased, just like we were togheter for a long loooong time.',
             publicationTime:'1h 30m',gender:'male',like:40,dislike:20,comments:4,favorite:false},
           {id:2,user:'Alejandro',gender:'female',age:25,emotion:'curious',detail:'xxxxxxxxxxxxx',publicationTime:'1h 30m',like:40,dislike:20,comments:9,favorite:false}],
 
